@@ -39,6 +39,10 @@ public class FingerprintHandler extends FingerprintManager.AuthenticationCallbac
         cancelAuthenticationSignal();
     }
 
+    public void dialogWasDetached() {
+        selfCancelled = true;
+    }
+
     @Override
     public void onAuthenticationError(int errMsgId,
                                       CharSequence errString) {

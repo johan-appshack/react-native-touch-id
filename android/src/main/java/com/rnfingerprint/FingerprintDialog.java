@@ -131,4 +131,11 @@ public class FingerprintDialog extends DialogFragment
         dismiss();
     }
 
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        FingerprintAuthModule.inProgress = false;
+        mFingerprintHandler.dialogWasDetached();
+    }
+
 }
